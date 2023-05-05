@@ -1,0 +1,284 @@
+#wrapper {
+
+    max-width: 1440px;
+    margin: 0 auto;
+
+    /*STRUCTURE*/
+
+    /* step 1 */
+    display: grid;
+
+    /* step 2 */
+
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: auto;
+
+    /* step 3 */
+
+    grid-template-areas:
+        "Maehomepage Maetitle Maetitle Maetitle "
+        "Maepic Maepic Maepara Maepara"
+        "ftr1 . . ftr2";
+}
+
+/* step 3 */
+
+.footer2 {
+    grid-area: ftr2;
+    text-align: right;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    max-width: 100%;
+    height: 100%;
+    margin-top: -23%;
+
+}
+
+#main {
+    margin-top: -7%;
+    grid-area: Maepic;
+    margin-left: 22%;
+    max-width: 100%;
+    height: 95%;
+    padding-right: 40px;
+}
+
+.mae1 {
+    grid-area: Maepara;
+}
+
+.mae2 {
+    grid-area: Maehomepage;
+}
+
+h1 {
+    grid-area: Maetitle;
+    text-align: center;
+    font-family: 'Monoton';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 148px;
+    padding-right: 250px;
+    margin: 0 0 5% 0;
+    color: #FFFFFF;
+}
+
+p {
+    font-family: 'Quicksand';
+    font-weight: 500;
+    font-size: 18.5px;
+    text-align: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #FFFFFF;
+    margin-top: 1%;
+
+}
+
+body {
+    background-image: url(../images/earth.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.mae1 {
+    background-color: #070D19;
+    margin-right: 22%;
+    margin-top: -7%;
+    height: 436px;
+
+}
+
+/* Thank you page */
+
+h2 {
+    font-size: 100px;
+    text-align: center;
+    margin-top: 15%;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+
+}
+
+/* Sidebar */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    font-family: 'Syne Mono';
+    font-style: normal;
+    text-align: center;
+    font-size: 25px;
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+}
+
+.maintext {
+    height: 10%;
+    margin-top: 60px;
+    padding: 10px 50px;
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 400px;
+    margin-top: 0px;
+    transform: translateX(-400px);
+    transition: transform 250ms ease-in-out;
+    background: #020B1A;
+}
+
+label.sidebarIconToggle > * {
+    display: none;
+}
+
+label.sidebarIconToggle {
+    width: 137px;
+    height: 136px;
+    border-radius: 0;
+    background-image: url(../images/maehome.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding-top: 37%;
+    padding-right: 15%;
+}
+
+.menu li a {
+    color: #fff;
+    display: grid;
+    padding: 25px;
+    text-decoration: none;
+}
+
+.menu li a:hover{
+    color: orange;
+}
+
+#openSidebarMenu:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input#openSidebarMenu {
+    display: none;
+}
+
+.sidebarIconToggle {
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    z-index: 99;
+    top: 22px;
+    left: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+/*** Media Query ***/
+
+@media screen and (max-width: 440px) {
+
+    #wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "Maehomepage Maehomepage"
+            "Maetitle Maetitle"
+            "Maepic Maepic"
+            "Maepara Maepara"
+            "ftr2 ftr2"
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: center;
+        line-height: 45px;
+        padding-right: 35px;
+        margin-left: 12%;
+        margin-top: 40%;
+    }
+
+    #main {
+        max-width: auto;
+        max-height: auto;
+        margin-top: 1%;
+        margin-bottom: 5%;
+        margin-left: auto;
+        padding-right: 0px;
+    }
+
+    p {
+        text-align: left;
+        font-size: 15px;
+        font-weight: 50;
+        margin-left: 3%;
+        margin-right: 3%;
+        margin-top: 5%;
+    }
+
+    .mae2 {
+        position: relative;
+        margin-right: 2%;
+    }
+
+    .footer2 {
+        padding-right: 20%;
+        text-align: center;
+        margin-right: 25%;
+        max-width: 100%;
+        max-height: auto;
+        margin-left: 25%;
+        margin-top: 8%;
+    }
+
+    .mae1 {
+        height: auto;
+        width: 340px;
+        margin-top: auto;
+        margin-right: 5%;
+        margin-left: 6%;
+    }
+
+    h2 {
+        font-size: 50px;
+        margin-top: 65%;
+    }
+    
+    body {
+        font-size: 22px;
+    }
+
+    #sidebarMenu {
+        opacity: 0.9;
+    }
+    
+    label.sidebarIconToggle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .sidebarIconToggle {
+        height: 22px;
+        width: 22px;
+        margin-left: 23px;
+    }
+}
